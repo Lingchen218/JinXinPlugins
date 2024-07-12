@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
-	"Version": 3,
-	"VersionName": "3.0",
+	"Version": 1,
+	"VersionName": "2.0",
 	"FriendlyName": "SimpleNetChannel",
 	"Description": "The high concurrency server plug-in based on UDP TCP can support the development of web server and game server, as well as the cooperation between servers.",
 	"Category": "RenZhai",

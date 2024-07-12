@@ -613,11 +613,8 @@ TSharedPtr<FSimpleConnetion> FSimpleNetManage::FNet::GetEmptyConnetion(TSharedPt
 			if (InConnetion->GetState() == ESimpleConnetionLinkType::LINK_UNINITIALIZED)
 			{
 				if (!InConnetion->IsLock())
-				{
-					uint32 Ip = 0;
-					InternetAddr->GetIp(Ip);
-					InConnetion->GetRemoteAddr()->SetIp(Ip);
-					InConnetion->GetRemoteAddr()->SetPort(InternetAddr->GetPort());
+				{				
+					InConnetion->SetRemoteAddr(InternetAddr);
 
 					InConnetion->Lock();
 

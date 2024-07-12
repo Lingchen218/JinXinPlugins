@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\unrealengine-5.4\\engine\\plugins\\renzhai_plugin\\simplemysql\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\simplemysql\\module.simplemysql.1.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unrealengine-5.4\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.cpp20.h.pch",
+        "Includes": [
+            "d:\\unrealengine-5.4\\engine\\plugins\\renzhai_plugin\\simplemysql\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\simplemysql\\definitions.simplemysql.h",
+            "d:\\unrealengine-5.4\\engine\\plugins\\renzhai_plugin\\simplemysql\\intermediate\\build\\win64\\unrealeditor\\inc\\simplemysql\\uht\\simplemysql.init.gen.cpp",
+            "d:\\unrealengine-5.4\\engine\\plugins\\renzhai_plugin\\simplemysql\\intermediate\\build\\win64\\unrealeditor\\inc\\simplemysql\\uht\\simplemysqlibrary.gen.cpp",
+            "d:\\unrealengine-5.4\\engine\\plugins\\renzhai_plugin\\simplemysql\\source\\simplemysql\\public\\simplemysqlibrary.h",
+            "d:\\unrealengine-5.4\\engine\\plugins\\renzhai_plugin\\simplemysql\\source\\simplemysql\\public\\core\\simplemysqllinktype.h",
+            "d:\\unrealengine-5.4\\engine\\plugins\\renzhai_plugin\\simplemysql\\intermediate\\build\\win64\\unrealeditor\\inc\\simplemysql\\uht\\simplemysqllinktype.generated.h",
+            "d:\\unrealengine-5.4\\engine\\plugins\\renzhai_plugin\\simplemysql\\intermediate\\build\\win64\\unrealeditor\\inc\\simplemysql\\uht\\simplemysqlibrary.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

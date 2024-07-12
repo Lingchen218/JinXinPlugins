@@ -1,0 +1,20 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.SimpleMySQL.1.cpp.obj": [
+			"SimpleMySQL.init.gen.cpp.obj",
+			"SimpleMySQLibrary.gen.cpp.obj"
+		],
+		"Module.SimpleMySQL.2.cpp.obj": [
+			"SimpleMysqlLinkType.gen.cpp.obj",
+			"SimpleMysqlObject.gen.cpp.obj",
+			"SimpleMysqlObject.cpp.obj",
+			"SimpleMySqlAssist.cpp.obj",
+			"SimpleMysqlLink.cpp.obj",
+			"SimpleMysqlLinkType.cpp.obj",
+			"SimpleMySQLJson.cpp.obj",
+			"SimpleMySQL.cpp.obj",
+			"SimpleMySQLibrary.cpp.obj"
+		]
+	}
+}

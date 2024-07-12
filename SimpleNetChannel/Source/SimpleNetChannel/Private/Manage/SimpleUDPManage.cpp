@@ -246,7 +246,7 @@ void FSimpleUDPManage::Listen()
 						SIMPLE_PROTOCOLS_RECEIVE(SP_SocketAddressResponse, InLinkSimpleAddr, InLastKey);
 						if (InLinkSimpleAddr.IP != 0, InLinkSimpleAddr.Port != 0)
 						{
-							uint32 NewPort = InLinkSimpleAddr.Port;
+							uint32 NewPort = 0;
 							if (FSocket* InNewUPDSocekt = Net.LocalConnetion->CreateSocket(
 								InLinkSimpleAddr.IP,
 								NewPort,
@@ -264,6 +264,8 @@ void FSimpleUDPManage::Listen()
 									Error,
 									TEXT("Link server error."));
 							}
+
+							InLinkSimpleAddr.Port = NewPort;
 						}
 						else
 						{

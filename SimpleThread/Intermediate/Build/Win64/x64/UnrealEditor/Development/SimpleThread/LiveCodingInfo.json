@@ -1,0 +1,15 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.SimpleThread.cpp.obj": [
+			"SimpleAbandonable.cpp.obj",
+			"SimpleSemaphore.cpp.obj",
+			"SimpleThreadCore.cpp.obj",
+			"SimpleCoroutines.cpp.obj",
+			"ThreadRunnableProxy.cpp.obj",
+			"SimpleThread.cpp.obj",
+			"ThreadManage.cpp.obj",
+			"WindowsPlatformThread.cpp.obj"
+		]
+	}
+}
