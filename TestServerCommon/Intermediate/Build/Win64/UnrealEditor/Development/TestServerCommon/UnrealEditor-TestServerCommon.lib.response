@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-TestServerCommon.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"..\Intermediate\Build\Win64\UnrealEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"F:\MyUE\UETest\FirstStartPlugin\Plugins\TestServerCommon\Intermediate\Build\Win64\UnrealEditor\Development\TestServerCommon\TestServerCommon.cpp.obj"
+"..\Intermediate\Build\Win64\UnrealEditor\Development\Default.rc2.res"
+/OUT:"F:\MyUE\UETest\FirstStartPlugin\Plugins\TestServerCommon\Intermediate\Build\Win64\UnrealEditor\Development\TestServerCommon\UnrealEditor-TestServerCommon.lib"

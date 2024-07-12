@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "f:\\myue\\uetest\\firststartplugin\\plugins\\testservercommon\\source\\testservercommon\\private\\testservercommon.cpp",
+        "ProvidedModule": "",
+        "PCH": "f:\\ueengine\\ue5_1\\engine\\intermediate\\build\\win64\\unrealeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "f:\\myue\\uetest\\firststartplugin\\plugins\\testservercommon\\intermediate\\build\\win64\\unrealeditor\\development\\testservercommon\\definitions.testservercommon.h",
+            "f:\\myue\\uetest\\firststartplugin\\plugins\\testservercommon\\source\\testservercommon\\public\\testservercommon.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
