@@ -1,0 +1,10 @@
+SimpleHTTP/Binaries/
+SimpleHTTP/Intermediate/
+SimpleMySQL/Binaries/
+SimpleMySQL/Intermediate/
+SimpleNetChannel/Binaries/
+SimpleNetChannel/Intermediate/
+SimpleThread/Intermediate/
+SimpleThread/Binaries/
+TestServerCommon/Binaries/
+TestServerCommon/Intermediate/
