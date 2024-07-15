@@ -35,9 +35,7 @@ public class MMORPGCommon : ModuleRules
 			new string[]
 			{
 				"CoreUObject",
-				"Engine",
-				"Slate",
-				"SlateCore",
+				"SimpleNetChannel",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
