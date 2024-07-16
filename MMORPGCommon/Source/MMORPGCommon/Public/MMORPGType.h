@@ -2,6 +2,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "SimpleNetChannelType.h"
 
 enum ELoginType
 {
@@ -26,9 +27,19 @@ struct MMORPGCOMMON_API FMMORPGUserData
 	FString HeadPortraitURL;//头像url
 };
 
+//网关状态结构体
+struct MMORPGCOMMON_API FMMORPGGateStatus
+{
+	FMMORPGGateStatus()
+		:GateConnetionNum(INDEX_NONE)
+	{}
+	int32 GateConnetionNum;					//网关连接人数
+	FSimpleAddrInfo GateServerAddrInfo;		//网关服务器地址
+};
+
 //网络数据解析
 namespace NetDataAnalysis
 {
-	void UserDataToString(const FMMORPGUserData& InUserData, FString& OutString);
-	void StringToUserData(const FString& InString, FMMORPGUserData& OutUserData);
+	MMORPGCOMMON_API void UserDataToString(const FMMORPGUserData& InUserData, FString& OutString);
+	MMORPGCOMMON_API void StringToUserData(const FString& InString, FMMORPGUserData& OutUserData);
 }
