@@ -38,4 +38,42 @@ namespace NetDataAnalysis
 			}
 		}
 	}
+
+	MMORPGCOMMON_API void CharacterAppearacnceToString(const FCharacterAppearacnce& InCA, FString& OutString)
+	{
+		OutString.Empty();
+
+		TSharedRef<TJsonWriter<TCHAR, TCondensedJsonPrintPolicy<TCHAR>>> Writer = TJsonWriterFactory<TCHAR, TCondensedJsonPrintPolicy<TCHAR>>::Create(&OutString);
+
+		Writer->WriteArrayStart();
+		for (auto& Temp : InCA)
+		{
+			Writer->WriteObjectStart();
+			Writer->WriteValue(TEXT("Name"), Temp.Name);
+			Writer->WriteValue(TEXT("Lv"), Temp.Lv);
+			Writer->WriteObjectEnd();
+		}
+		Writer->WriteArrayEnd();
+		Writer->Close();
+	}
+
+	MMORPGCOMMON_API void StringToFCharacterAppearacnce(const FString& InString, FCharacterAppearacnce& OutCA)
+	{
+		TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(InString);
+		TArray<TSharedPtr<FJsonValue>> ReadRoot;
+
+		if (FJsonSerializer::Deserialize(Reader, ReadRoot))
+		{
+			for (auto& Temp : ReadRoot)
+			{
+				OutCA.Add(FMMORPGCharacterAppearance());
+				FMMORPGCharacterAppearance& InCA = OutCA.Last();
+				if (TSharedPtr<FJsonObject> InJsonObject = Temp->AsObject())
+				{
+					InCA.Name = InJsonObject->GetStringField(TEXT("Name"));
+					InCA.Lv = InJsonObject->GetIntegerField(TEXT("Lv"));
+				}
+			}
+		}
+	}
 }

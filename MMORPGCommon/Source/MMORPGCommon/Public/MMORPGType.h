@@ -12,7 +12,7 @@ enum ELoginType
 	LOGIN_WRONG_PASSWORD,		//密码错误
 };
 
-//用户信息的结构体
+//玩家账户信息的结构体
 struct MMORPGCOMMON_API FMMORPGUserData
 {
 	FMMORPGUserData()
@@ -26,6 +26,19 @@ struct MMORPGCOMMON_API FMMORPGUserData
 	FString Name;
 	FString HeadPortraitURL;//头像url
 };
+
+//玩家角色信息的结构体
+struct MMORPGCOMMON_API FMMORPGCharacterAppearance
+{
+	FMMORPGCharacterAppearance()
+		:Lv(INDEX_NONE)
+	{}
+
+	FString Name;
+	int32 Lv;
+};
+
+typedef TArray<FMMORPGCharacterAppearance> FCharacterAppearacnce;
 
 //网关状态结构体
 struct MMORPGCOMMON_API FMMORPGGateStatus
@@ -42,4 +55,7 @@ namespace NetDataAnalysis
 {
 	MMORPGCOMMON_API void UserDataToString(const FMMORPGUserData& InUserData, FString& OutString);
 	MMORPGCOMMON_API void StringToUserData(const FString& InString, FMMORPGUserData& OutUserData);
+
+	MMORPGCOMMON_API void CharacterAppearacnceToString(const FCharacterAppearacnce& InCA, FString& OutString);
+	MMORPGCOMMON_API void StringToFCharacterAppearacnce(const FString& InString, FCharacterAppearacnce& OutCA);
 }
