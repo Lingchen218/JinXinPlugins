@@ -50,7 +50,9 @@ namespace NetDataAnalysis
 		{
 			Writer->WriteObjectStart();
 			Writer->WriteValue(TEXT("Name"), Temp.Name);
+			Writer->WriteValue(TEXT("Date"), Temp.Date);
 			Writer->WriteValue(TEXT("Lv"), Temp.Lv);
+			Writer->WriteValue(TEXT("SlotPosition"), Temp.SlotPosition);
 			Writer->WriteObjectEnd();
 		}
 		Writer->WriteArrayEnd();
@@ -71,7 +73,9 @@ namespace NetDataAnalysis
 				if (TSharedPtr<FJsonObject> InJsonObject = Temp->AsObject())
 				{
 					InCA.Name = InJsonObject->GetStringField(TEXT("Name"));
+					InCA.Date = InJsonObject->GetStringField(TEXT("Date"));
 					InCA.Lv = InJsonObject->GetIntegerField(TEXT("Lv"));
+					InCA.SlotPosition = InJsonObject->GetIntegerField(TEXT("SlotPosition"));
 				}
 			}
 		}

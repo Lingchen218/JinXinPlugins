@@ -31,11 +31,14 @@ struct MMORPGCOMMON_API FMMORPGUserData
 struct MMORPGCOMMON_API FMMORPGCharacterAppearance
 {
 	FMMORPGCharacterAppearance()
-		:Lv(INDEX_NONE)
+		:Lv(INDEX_NONE),
+		SlotPosition(INDEX_NONE)
 	{}
 
 	FString Name;
+	FString Date;
 	int32 Lv;
+	int32 SlotPosition;
 };
 
 typedef TArray<FMMORPGCharacterAppearance> FCharacterAppearacnce;
