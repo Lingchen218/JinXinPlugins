@@ -39,7 +39,7 @@ namespace NetDataAnalysis
 		}
 	}
 
-	MMORPGCOMMON_API void CharacterAppearacnceToString(const FCharacterAppearacnce& InCA, FString& OutString)
+	void CharacterAppearacnceToString(const FCharacterAppearacnce& InCA, FString& OutString)
 	{
 		OutString.Empty();
 
@@ -59,7 +59,7 @@ namespace NetDataAnalysis
 		Writer->Close();
 	}
 
-	MMORPGCOMMON_API void StringToFCharacterAppearacnce(const FString& InString, FCharacterAppearacnce& OutCA)
+	void StringToFCharacterAppearacnce(const FString& InString, FCharacterAppearacnce& OutCA)
 	{
 		TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(InString);
 		TArray<TSharedPtr<FJsonValue>> ReadRoot;
@@ -80,4 +80,38 @@ namespace NetDataAnalysis
 			}
 		}
 	}
+
+	void CharacterAppearacnceToString(const FMMORPGCharacterAppearance& InCA, FString& OutString)
+	{
+		OutString.Empty();
+
+		TSharedRef<TJsonWriter<TCHAR, TCondensedJsonPrintPolicy<TCHAR>>> Writer = TJsonWriterFactory<TCHAR, TCondensedJsonPrintPolicy<TCHAR>>::Create(&OutString);
+
+		Writer->WriteObjectStart();
+		Writer->WriteValue(TEXT("Name"), InCA.Name);
+		Writer->WriteValue(TEXT("Date"), InCA.Date);
+		Writer->WriteValue(TEXT("Lv"), InCA.Lv);
+		Writer->WriteValue(TEXT("SlotPosition"), InCA.SlotPosition);
+
+		Writer->WriteObjectEnd();
+		Writer->Close();
+	}
+
+	void StringToFCharacterAppearacnce(const FString& InString, FMMORPGCharacterAppearance& OutCA)
+	{
+		TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(InString);
+		TSharedPtr<FJsonValue> ReadRoot;
+
+		if (FJsonSerializer::Deserialize(Reader, ReadRoot))
+		{
+			if (TSharedPtr<FJsonObject> InJsonObject = ReadRoot->AsObject())//转换成对象
+			{
+				OutCA.Name = InJsonObject->GetStringField(TEXT("Name"));
+				OutCA.Date = InJsonObject->GetStringField(TEXT("Date"));
+				OutCA.Lv = InJsonObject->GetIntegerField(TEXT("Lv"));
+				OutCA.SlotPosition = InJsonObject->GetIntegerField(TEXT("SlotPosition"));
+			}
+		}
+	}
+
 }

@@ -53,12 +53,25 @@ struct MMORPGCOMMON_API FMMORPGGateStatus
 	FSimpleAddrInfo GateServerAddrInfo;		//网关服务器地址
 };
 
+//检查名字状态的枚举
+enum ECheckNameType
+{
+	UNKNOWN_ERROR,		//未知错误
+	NAME_NOT_EXIST,		//名字不存在
+	SERVER_NOT_EXIST,	//服务器不存在
+	NAME_EXIST,			//名字存在
+};
+
 //网络数据解析
 namespace NetDataAnalysis
 {
+	//用户信息
 	MMORPGCOMMON_API void UserDataToString(const FMMORPGUserData& InUserData, FString& OutString);
 	MMORPGCOMMON_API void StringToUserData(const FString& InString, FMMORPGUserData& OutUserData);
-
+	//角色列表
 	MMORPGCOMMON_API void CharacterAppearacnceToString(const FCharacterAppearacnce& InCA, FString& OutString);
 	MMORPGCOMMON_API void StringToFCharacterAppearacnce(const FString& InString, FCharacterAppearacnce& OutCA);
+	//单个角色
+	MMORPGCOMMON_API void CharacterAppearacnceToString(const FMMORPGCharacterAppearance& InCA, FString& OutString);
+	MMORPGCOMMON_API void StringToFCharacterAppearacnce(const FString& InString, FMMORPGCharacterAppearance& OutCA);
 }
