@@ -32,13 +32,21 @@ struct MMORPGCOMMON_API FMMORPGCharacterAppearance
 {
 	FMMORPGCharacterAppearance()
 		:Lv(INDEX_NONE),
-		SlotPosition(INDEX_NONE)
+		SlotPosition(INDEX_NONE),
+		LegSize(0.f),
+		WaistSize(0.f),
+		ArmSize(0.f)
 	{}
 
 	FString Name;
 	FString Date;
 	int32 Lv;
 	int32 SlotPosition;
+	float LegSize;
+	float WaistSize;
+	float ArmSize;
+
+	void Reset();
 };
 
 typedef TArray<FMMORPGCharacterAppearance> FCharacterAppearacnce;

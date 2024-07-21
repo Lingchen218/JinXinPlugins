@@ -53,6 +53,9 @@ namespace NetDataAnalysis
 			Writer->WriteValue(TEXT("Date"), Temp.Date);
 			Writer->WriteValue(TEXT("Lv"), Temp.Lv);
 			Writer->WriteValue(TEXT("SlotPosition"), Temp.SlotPosition);
+			Writer->WriteValue(TEXT("LegSize"), Temp.LegSize);
+			Writer->WriteValue(TEXT("WaistSize"), Temp.WaistSize);
+			Writer->WriteValue(TEXT("ArmSize"), Temp.ArmSize);
 			Writer->WriteObjectEnd();
 		}
 		Writer->WriteArrayEnd();
@@ -76,6 +79,9 @@ namespace NetDataAnalysis
 					InCA.Date = InJsonObject->GetStringField(TEXT("Date"));
 					InCA.Lv = InJsonObject->GetIntegerField(TEXT("Lv"));
 					InCA.SlotPosition = InJsonObject->GetIntegerField(TEXT("SlotPosition"));
+					InCA.LegSize = InJsonObject->GetNumberField(TEXT("LegSize"));
+					InCA.WaistSize = InJsonObject->GetNumberField(TEXT("WaistSize"));
+					InCA.ArmSize = InJsonObject->GetNumberField(TEXT("ArmSize"));
 				}
 			}
 		}
@@ -92,6 +98,9 @@ namespace NetDataAnalysis
 		Writer->WriteValue(TEXT("Date"), InCA.Date);
 		Writer->WriteValue(TEXT("Lv"), InCA.Lv);
 		Writer->WriteValue(TEXT("SlotPosition"), InCA.SlotPosition);
+		Writer->WriteValue(TEXT("LegSize"), InCA.LegSize);
+		Writer->WriteValue(TEXT("WaistSize"), InCA.WaistSize);
+		Writer->WriteValue(TEXT("ArmSize"), InCA.ArmSize);
 
 		Writer->WriteObjectEnd();
 		Writer->Close();
@@ -110,8 +119,22 @@ namespace NetDataAnalysis
 				OutCA.Date = InJsonObject->GetStringField(TEXT("Date"));
 				OutCA.Lv = InJsonObject->GetIntegerField(TEXT("Lv"));
 				OutCA.SlotPosition = InJsonObject->GetIntegerField(TEXT("SlotPosition"));
+				OutCA.LegSize = InJsonObject->GetNumberField(TEXT("LegSize"));
+				OutCA.WaistSize = InJsonObject->GetNumberField(TEXT("WaistSize"));
+				OutCA.ArmSize = InJsonObject->GetNumberField(TEXT("ArmSize"));
 			}
 		}
 	}
 
+}
+
+void FMMORPGCharacterAppearance::Reset()
+{
+	Name.Empty();
+	Date.Empty();
+	Lv = INDEX_NONE;
+	SlotPosition = INDEX_NONE;
+	LegSize = 0.f;
+	WaistSize = 0.f;
+	ArmSize = 0.f;
 }
