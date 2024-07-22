@@ -47,7 +47,15 @@ struct MMORPGCOMMON_API FMMORPGCharacterAppearance
 	float ArmSize;
 
 	void Reset();
+
+public:
+	bool IsVaild() const { return SlotPosition != INDEX_NONE; }
 };
+
+FORCEINLINE bool operator==(const FMMORPGCharacterAppearance& Lhs, const FMMORPGCharacterAppearance& Rhs)
+{
+	return Lhs.SlotPosition == Rhs.SlotPosition;
+}
 
 typedef TArray<FMMORPGCharacterAppearance> FCharacterAppearacnce;
 

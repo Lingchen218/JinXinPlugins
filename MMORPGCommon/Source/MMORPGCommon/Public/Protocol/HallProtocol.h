@@ -9,3 +9,5 @@ DEFINITION_SIMPLE_PROTOCOLS(CheckCharacterNameRequests, 6)//检查角色名字�
 DEFINITION_SIMPLE_PROTOCOLS(CheckCharacterNameResponses, 7)//检查角色名字回调
 DEFINITION_SIMPLE_PROTOCOLS(CreateCharacterRequests, 8)//创建角色请求
 DEFINITION_SIMPLE_PROTOCOLS(CreateCharacterResponses, 9)//创建角色回调
+DEFINITION_SIMPLE_PROTOCOLS(DeleteCharacterRequests, 20)//删除角色请求
+DEFINITION_SIMPLE_PROTOCOLS(DeleteCharacterResponses, 21)//删除角色回调
