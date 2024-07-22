@@ -11,3 +11,5 @@ DEFINITION_SIMPLE_PROTOCOLS(CreateCharacterRequests, 8)//创建角色请求
 DEFINITION_SIMPLE_PROTOCOLS(CreateCharacterResponses, 9)//创建角色回调
 DEFINITION_SIMPLE_PROTOCOLS(DeleteCharacterRequests, 20)//删除角色请求
 DEFINITION_SIMPLE_PROTOCOLS(DeleteCharacterResponses, 21)//删除角色回调
+DEFINITION_SIMPLE_PROTOCOLS(EditorCharacterRequests, 22)//编辑角色请求
+DEFINITION_SIMPLE_PROTOCOLS(EditorCharacterResponses, 23)//编辑角色回调
