@@ -56,6 +56,8 @@ namespace NetDataAnalysis
 			Writer->WriteValue(TEXT("LegSize"), Temp.LegSize);
 			Writer->WriteValue(TEXT("WaistSize"), Temp.WaistSize);
 			Writer->WriteValue(TEXT("ArmSize"), Temp.ArmSize);
+			Writer->WriteValue(TEXT("HeadSize"), Temp.HeadSize);
+			Writer->WriteValue(TEXT("ChestSize"), Temp.ChestSize);
 			Writer->WriteObjectEnd();
 		}
 		Writer->WriteArrayEnd();
@@ -82,6 +84,8 @@ namespace NetDataAnalysis
 					InCA.LegSize = InJsonObject->GetNumberField(TEXT("LegSize"));
 					InCA.WaistSize = InJsonObject->GetNumberField(TEXT("WaistSize"));
 					InCA.ArmSize = InJsonObject->GetNumberField(TEXT("ArmSize"));
+					InCA.HeadSize = InJsonObject->GetNumberField(TEXT("HeadSize"));
+					InCA.ChestSize = InJsonObject->GetNumberField(TEXT("ChestSize"));
 				}
 			}
 		}
@@ -101,6 +105,8 @@ namespace NetDataAnalysis
 		Writer->WriteValue(TEXT("LegSize"), InCA.LegSize);
 		Writer->WriteValue(TEXT("WaistSize"), InCA.WaistSize);
 		Writer->WriteValue(TEXT("ArmSize"), InCA.ArmSize);
+		Writer->WriteValue(TEXT("HeadSize"), InCA.HeadSize);
+		Writer->WriteValue(TEXT("ChestSize"), InCA.ChestSize);
 
 		Writer->WriteObjectEnd();
 		Writer->Close();
@@ -122,6 +128,8 @@ namespace NetDataAnalysis
 				OutCA.LegSize = InJsonObject->GetNumberField(TEXT("LegSize"));
 				OutCA.WaistSize = InJsonObject->GetNumberField(TEXT("WaistSize"));
 				OutCA.ArmSize = InJsonObject->GetNumberField(TEXT("ArmSize"));
+				OutCA.ArmSize = InJsonObject->GetNumberField(TEXT("HeadSize"));
+				OutCA.ArmSize = InJsonObject->GetNumberField(TEXT("ChestSize"));
 			}
 		}
 	}
@@ -137,4 +145,6 @@ void FMMORPGCharacterAppearance::Reset()
 	LegSize = 0.f;
 	WaistSize = 0.f;
 	ArmSize = 0.f;
+	HeadSize = 0.f;
+	ChestSize = 0.f;
 }

@@ -35,7 +35,9 @@ struct MMORPGCOMMON_API FMMORPGCharacterAppearance
 		SlotPosition(INDEX_NONE),
 		LegSize(0.f),
 		WaistSize(0.f),
-		ArmSize(0.f)
+		ArmSize(0.f),
+		HeadSize(0.f),
+		ChestSize(0.f)
 	{}
 
 	FString Name;
@@ -45,6 +47,8 @@ struct MMORPGCOMMON_API FMMORPGCharacterAppearance
 	float LegSize;
 	float WaistSize;
 	float ArmSize;
+	float HeadSize;
+	float ChestSize;
 
 	void Reset();
 
