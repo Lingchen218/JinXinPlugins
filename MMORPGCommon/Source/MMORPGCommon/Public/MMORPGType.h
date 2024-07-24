@@ -25,6 +25,8 @@ struct MMORPGCOMMON_API FMMORPGUserData
 	FString Email;
 	FString Name;
 	FString HeadPortraitURL;//头像url
+
+	void Reset();
 };
 
 //玩家角色信息的结构体
@@ -62,6 +64,16 @@ FORCEINLINE bool operator==(const FMMORPGCharacterAppearance& Lhs, const FMMORPG
 }
 
 typedef TArray<FMMORPGCharacterAppearance> FCharacterAppearacnce;
+
+//玩家注册信息
+struct MMORPGCOMMON_API FMMORPGPlayerRegistInfo
+{
+	FMMORPGUserData UserInfo;
+	FMMORPGCharacterAppearance CAInfo;
+
+	void Reset();
+	bool IsValid();
+};
 
 //网关状态结构体
 struct MMORPGCOMMON_API FMMORPGGateStatus

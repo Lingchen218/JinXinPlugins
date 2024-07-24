@@ -148,3 +148,23 @@ void FMMORPGCharacterAppearance::Reset()
 	HeadSize = 0.f;
 	ChestSize = 0.f;
 }
+
+void FMMORPGUserData::Reset()
+{
+	ID = INDEX_NONE;
+	Account.Empty();
+	Email.Empty();
+	Name.Empty();
+	HeadPortraitURL.Empty();
+}
+
+void FMMORPGPlayerRegistInfo::Reset()
+{
+	UserInfo.Reset();
+	CAInfo.Reset();
+}
+
+bool FMMORPGPlayerRegistInfo::IsValid()
+{
+	return UserInfo.ID != INDEX_NONE;
+}
