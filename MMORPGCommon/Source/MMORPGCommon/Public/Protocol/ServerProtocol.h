@@ -7,3 +7,5 @@ DEFINITION_SIMPLE_PROTOCOLS(GateStatusRequests, 2)//网关状态请求协议
 DEFINITION_SIMPLE_PROTOCOLS(GateStatusResponses, 3)//网关状态回调协议
 DEFINITION_SIMPLE_PROTOCOLS(PlayerRegistInfoRequests, 12)//玩家注册信息请求协议
 DEFINITION_SIMPLE_PROTOCOLS(PlayerRegistInfoResponses, 13)//玩家注册信息回调协议
+DEFINITION_SIMPLE_PROTOCOLS(PlayerQuitRequests, 14)//玩家退出时移除注册请求协议
+DEFINITION_SIMPLE_PROTOCOLS(PlayerQuitResponses, 15)//玩家退出时移除注册回调协议
