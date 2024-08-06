@@ -3,6 +3,7 @@
 
 #include "CoreMinimal.h"
 #include "SimpleNetChannelType.h"
+#include "MMORPGType.generated.h"
 
 enum ELoginType
 {
@@ -29,9 +30,12 @@ struct MMORPGCOMMON_API FMMORPGUserData
 	void Reset();
 };
 
-//玩家角色信息的结构体
+//玩家角色信息的结构体，支持反射
+USTRUCT()
 struct MMORPGCOMMON_API FMMORPGCharacterAppearance
 {
+	GENERATED_USTRUCT_BODY()
+
 	FMMORPGCharacterAppearance()
 		:Lv(INDEX_NONE),
 		SlotPosition(INDEX_NONE),
@@ -42,14 +46,31 @@ struct MMORPGCOMMON_API FMMORPGCharacterAppearance
 		ChestSize(0.f)
 	{}
 
+	UPROPERTY()
 	FString Name;
+
+	UPROPERTY()
 	FString Date;
+
+	UPROPERTY()
 	int32 Lv;
+
+	UPROPERTY()
 	int32 SlotPosition;
+
+	UPROPERTY()
 	float LegSize;
+
+	UPROPERTY()
 	float WaistSize;
+
+	UPROPERTY()
 	float ArmSize;
+
+	UPROPERTY()
 	float HeadSize;
+
+	UPROPERTY()
 	float ChestSize;
 
 	void Reset();
