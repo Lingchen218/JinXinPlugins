@@ -128,8 +128,8 @@ namespace NetDataAnalysis
 				OutCA.LegSize = InJsonObject->GetNumberField(TEXT("LegSize"));
 				OutCA.WaistSize = InJsonObject->GetNumberField(TEXT("WaistSize"));
 				OutCA.ArmSize = InJsonObject->GetNumberField(TEXT("ArmSize"));
-				OutCA.ArmSize = InJsonObject->GetNumberField(TEXT("HeadSize"));
-				OutCA.ArmSize = InJsonObject->GetNumberField(TEXT("ChestSize"));
+				OutCA.HeadSize = InJsonObject->GetNumberField(TEXT("HeadSize"));
+				OutCA.ChestSize = InJsonObject->GetNumberField(TEXT("ChestSize"));
 			}
 		}
 	}
