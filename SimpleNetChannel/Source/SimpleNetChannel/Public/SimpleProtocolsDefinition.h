@@ -97,7 +97,11 @@ public: \
 #define DEFINITION_SIMPLE_PROTOCOLS_FORCE_SYNCHRONIZE(ProtocolsName,ProtocolsNumber) DEFINITION_PROTOCOLS(ProtocolsName,ProtocolsNumber,true,false)
 
 #if/* PLATFORM_IOS ||*/ PLATFORM_ANDROID
-#define SIMPLE_PROTOCOLS_SEND(InProtocols,args...) FSimpleProtocols<InProtocols>::Send(Channel,##args);
+//发送当前
+#define SIMPLE_PROTOCOLS_SEND(InProtocols,args...) FSimpleProtocols<InProtocols>::Send(Channel,Channel->GetRemoteAddr(),##args);
+//需要提供一个地址 一般主通道 使用 也允许个人使用
+#define SIMPLE_PROTOCOLS_SEND_ADDR(InProtocols,Addr,args...) FSimpleProtocols<InProtocols>::Send(Channel,Addr,##args);
+
 #define SIMPLE_PROTOCOLS_RECEIVE(InProtocols,args...) FSimpleProtocols<InProtocols>::Receive(Channel,##args);
 
 //用于构建参数字节
