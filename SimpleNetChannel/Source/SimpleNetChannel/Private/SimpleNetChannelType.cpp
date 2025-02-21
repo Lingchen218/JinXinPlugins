@@ -28,7 +28,8 @@ FSimpleConfigInfo::FSimpleConfigInfo()
 	OutTimeSynchronizationTime = 5.f;
 
 	PingMaxOutTime = 2.f;
-	PortRange = FIntVector2(Port, ++Port);
+	Port += 1;
+	PortRange = FIntVector2(Port-1, Port);
 }
 
 FSimplePackageHead::FSimplePackageHead()

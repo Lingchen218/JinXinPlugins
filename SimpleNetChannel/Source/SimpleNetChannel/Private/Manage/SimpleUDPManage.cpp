@@ -244,7 +244,7 @@ void FSimpleUDPManage::Listen()
 						FSimpleAddr InLastKey;//用于验证
 
 						SIMPLE_PROTOCOLS_RECEIVE(SP_SocketAddressResponse, InLinkSimpleAddr, InLastKey);
-						if (InLinkSimpleAddr.IP != 0, InLinkSimpleAddr.Port != 0)
+						if (InLinkSimpleAddr.IP != 0 && InLinkSimpleAddr.Port != 0)
 						{
 							uint32 NewPort = 0;
 							if (FSocket* InNewUPDSocekt = Net.LocalConnetion->CreateSocket(
