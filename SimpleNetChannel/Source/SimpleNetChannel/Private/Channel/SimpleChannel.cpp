@@ -9,7 +9,7 @@
 #include "Protocols/SimpleNetProtocols.h"
 #include "Log/SimpleNetChannelLog.h"
 #include "Async/TaskGraphInterfaces.h"
-
+#include "SimpleNetManage.h"
  FSimpleReturnDelegate FSimpleChannel::SimpleControllerDelegate;
  FSimpleReturnDelegate FSimpleChannel::SimplePlayerDelegate;
 

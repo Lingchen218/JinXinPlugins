@@ -5,7 +5,7 @@
 #include "Channel/SimpleChannel.h"
 #include "Stream/SimpleIOStream.h"
 #include "SimpleNetChannelType.h"
-#include "SimpleNetManage.h"
+// #include "SimpleNetManage.h"
 
 template<uint32 ProtocolsType>
 class FSimpleProtocols{};

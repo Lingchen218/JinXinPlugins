@@ -7,7 +7,6 @@
 
 class FSocket;
 class FInternetAddr;
-class FSimpleChannel;
 class ISocketSubsystem;
 class FSimpleNetManage;
 
