@@ -245,10 +245,10 @@ FSocket *FSimpleUDPConnetion::CreateSocket(const uint32& InIP,uint32 &InPort,boo
 			int32 BoundPort = SocketSubsystem->BindNextPort(Socket, *LocalAddr, 1, 1);
 			if (!BoundPort)
 			{
-				FString ErrorInfo = TEXT("Server failed to bind port.");
+				FString ErrorInfo = TEXT("Server failed to bind port:");
 				Manage->ExecuteNetManageMsgDelegate(ESimpleNetErrorType::INIT_FAIL, ErrorInfo);
 
-				UE_LOG(LogSimpleNetChannel, Error, TEXT("%s"), *ErrorInfo);
+				UE_LOG(LogSimpleNetChannel, Error, TEXT("%s %d"), *ErrorInfo, InNewPort);
 				SocketSubsystem->DestroySocket(Socket);
 				Socket = nullptr;
 
